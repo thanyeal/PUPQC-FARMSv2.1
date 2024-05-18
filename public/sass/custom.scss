@@ -1,0 +1,50 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Values
+$maroon:      #800000;
+$yellow-gold: #E6B83C;
+
+// Variables
+$primary:       $maroon;
+$secondary:     $yellow-gold;
+
+// Primary Button Modification 
+$farms-btn-primary: $primary;
+$farms-btn-primary-hover:    #600000;
+$farms-btn-primary-fchild:   #A02020;
+$farms-btn-primary-disabled: #702020;
+.btn-primary {
+    background-color: $farms-btn-primary;
+    border-color: $farms-btn-primary;
+}
+.btn-primary:hover {
+    background-color: $farms-btn-primary-hover;
+    border-color: $farms-btn-primary;
+}
+.btn-primary:first-child:active, .btn.active {
+    background-color: $farms-btn-primary-fchild;
+    border-color: $farms-btn-primary-fchild;
+}
+.btn-primary:disabled, .btn.disabled, fieldset:disabled .btn {
+    color: var(--bs-btn-disabled-color);
+    pointer-events: none;
+    background-color: $farms-btn-primary-disabled;
+    border-color: $farms-btn-primary-disabled;
+    opacity: 0.6;
+}
+
+// Input Modification
+.form-control:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+// Primary Text
+.text-primary {
+    color: $farms-btn-primary;
+    color: rgba( $farms-btn-primary, var(--bs-text-opacity)) !important;
+}
+.text-primary:hover {
+    color: $farms-btn-primary;
+}
