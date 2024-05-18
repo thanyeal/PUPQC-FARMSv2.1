@@ -26,10 +26,28 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
+        //return redirect()->intended(RouteServiceProvider::HOME);
+
+        if (Auth::user()->role_id == 1) {
+            return redirect()->intended(RouteServiceProvider::AcadHead);
+        }
+        elseif (Auth::user()->role_id == 2) {
+            return redirect()->intended(RouteServiceProvider::Regular);
+        }
+        elseif (Auth::user()->role_id == 3) {
+            return redirect()->intended(RouteServiceProvider::Parttime);
+        }
+        elseif (Auth::user()->role_id == 4) {
+            return redirect()->intended(RouteServiceProvider::AcadStaff);
+        }
+        elseif (Auth::user()->role_id == 5) {
+            return redirect()->intended(RouteServiceProvider::Director);
+        }
+        else {
+            return redirect('/login');
+        }
         
-        return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
@@ -38,11 +56,8 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
     }
 }
