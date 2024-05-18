@@ -29,19 +29,19 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         //return redirect()->intended(RouteServiceProvider::HOME);
 
-        if (Auth::user()->role_id == 1) {
+        if (Auth::user()->role_id == '1') {
             return redirect()->intended(RouteServiceProvider::AcadHead);
         }
-        elseif (Auth::user()->role_id == 2) {
+        elseif (Auth::user()->role_id == '2') {
             return redirect()->intended(RouteServiceProvider::Regular);
         }
-        elseif (Auth::user()->role_id == 3) {
+        elseif (Auth::user()->role_id == '3') {
             return redirect()->intended(RouteServiceProvider::Parttime);
         }
-        elseif (Auth::user()->role_id == 4) {
+        elseif (Auth::user()->role_id == '4') {
             return redirect()->intended(RouteServiceProvider::AcadStaff);
         }
-        elseif (Auth::user()->role_id == 5) {
+        elseif (Auth::user()->role_id == '5') {
             return redirect()->intended(RouteServiceProvider::Director);
         }
         else {

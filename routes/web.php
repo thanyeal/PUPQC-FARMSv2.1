@@ -30,27 +30,25 @@ require __DIR__.'/auth.php';
 // })->middleware(['auth','verified'])->name('dashboard');
 
 Route::middleware('auth','verified')->group(function () {
+    Route::get      ('/'        , [Dashboard::class, '_view'])->name('dashboard');
     Route::get      ('/profile' , [ProfileController::class, 'edit'])       ->name('profile.edit')      ;
     Route::patch    ('/profile' , [ProfileController::class, 'update'])     ->name('profile.update')    ;
     Route::delete   ('/profile' , [ProfileController::class, 'destroy'])    ->name('profile.destroy')   ;
 });
 
-Route::middleware('auth','verified')->group(function () {
-    Route::get      ('/'        , [Dashboard::class, '_view'])->name('dashboard');
-});
 
-Route::middleware('auth','verified')->group(function () {
-    Route::get      ('/'        , [StaffDashboard::class, '_view_staff'])->name('dashboard');
-});
+// Route::middleware('auth','verified')->group(function () {
+//     Route::get      ('/'        , [StaffDashboard::class, '_view_staff'])->name('dashboard');
+// });
 
-Route::middleware('auth','verified')->group(function () {
-    Route::get      ('/'        , [RegularFacultyDashboard::class, '_view_regular'])->name('dashboard');
-});
+// Route::middleware('auth','verified')->group(function () {
+//     Route::get      ('/'        , [RegularFacultyDashboard::class, '_view_regular'])->name('dashboard');
+// });
 
-Route::middleware('auth','verified')->group(function () {
-    Route::get      ('/'        , [ParttimeFacultyDashboard::class, '_view_parttime'])->name('dashboard');
-});
+// Route::middleware('auth','verified')->group(function () {
+//     Route::get      ('/'        , [ParttimeFacultyDashboard::class, '_view_parttime'])->name('dashboard');
+// });
 
-Route::middleware('auth','verified')->group(function () {
-    Route::get      ('/'        , [DirectorDashboard::class, '_view_director'])->name('dashboard');
-});
+// Route::middleware('auth','verified')->group(function () {
+//     Route::get      ('/'        , [DirectorDashboard::class, '_view_director'])->name('dashboard');
+// });
