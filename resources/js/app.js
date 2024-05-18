@@ -1,3 +1,7 @@
 import './bootstrap';
 import '../scss/app.scss';
-import * as bootstrap from 'bootstrap';
+import 'remixicon/fonts/remixicon.css';
+
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
