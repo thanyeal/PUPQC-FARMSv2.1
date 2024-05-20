@@ -16,54 +16,59 @@ class ModuleSeeder extends Seeder
      */
     public function run(): void
     {
-        $roles = [
-            ['id' => '1', 'title' => 'Admin'],
-            ['id' => '2', 'title' => 'Faculty (Regular)'],
-            ['id' => '3', 'title' => 'Faculty (Part time)'],
-            ['id' => '4', 'title' => 'Staff'],
-            ['id' => '5', 'title' => 'Director'],
-        ];
+        // $roles = [
+        //     ['id' => '1', 'title' => 'Admin'],
+        //     ['id' => '2', 'title' => 'Faculty (Regular)'],
+        //     ['id' => '3', 'title' => 'Faculty (Part time)'],
+        //     ['id' => '4', 'title' => 'Staff'],
+        //     ['id' => '5', 'title' => 'Director'],
+        // ];
 
-        foreach ($roles as $role) {
-            Role::create($role);
-        }
+        // foreach ($roles as $role) {
+        //     Role::create($role);
+        // }
 
         // Users
         $users = [
             [
-                'id' => Str::uuid(),
+                // 'id' => Str::uuid(),
+                'id' => '1',
                 'name' => 'Demelyn E. Monzon',
                 'email' => 'admin@xyz.ph',
                 'password' => bcrypt('changeme'),
-                'role_id' => 1,
+                // 'role_id' => 1,
             ],
             [
-                'id' => Str::uuid(),
+                // 'id' => Str::uuid(),
+                'id' => '2',
                 'name' => 'Irryne P. Gatchalian',
                 'email' => 'regular@xyz.ph',
                 'password' => bcrypt('changeme'),
-                'role_id' => 2,
+                // 'role_id' => 2,
             ],
             [
-                'id' => Str::uuid(),
+                // 'id' => Str::uuid(),
+                'id' => '3',
                 'name' => 'Rosicar E. Escober',
                 'email' => 'part-time@xyz.ph',
                 'password' => bcrypt('changeme'),
-                'role_id' => 3,
+                // 'role_id' => 3,
             ],
             [
-                'id' => Str::uuid(),
+                // 'id' => Str::uuid(),
+                'id' => '4',
                 'name' => 'Ednalyn A. Bataller',
                 'email' => 'staff@xyz.ph',
                 'password' => bcrypt('changeme'),
-                'role_id' => 4,
+                // 'role_id' => 4,
             ],
             [
-                'id' => Str::uuid(),
+                // 'id' => Str::uuid(),
+                'id' => '5',
                 'name' => 'Jaime P. Gutierrez, Jr.',
                 'email' => 'director@xyz.ph',
                 'password' => bcrypt('changeme'),
-                'role_id' => 5,
+                // 'role_id' => 5,
             ],
         ];
 

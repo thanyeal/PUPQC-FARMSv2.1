@@ -31,14 +31,6 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            {{-- @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif --}}
             <div class="page-header d-print-none">
                 <div class="container-xl">
                 <div class="row g-2 align-items-center">
@@ -91,39 +83,11 @@
                 </div>
                 </div>
             </div>
-            <!-- Page Content -->
+
             <main>
                 {{ $slot }}
             </main>
-            
-            <div aria-live="polite" aria-atomic="true" class="fixed bottom-4 right-4 z-50">
-                <div class="toast-container position-fixed bottom-0 end-0 p-3"> {{-- d-flex justify-content-center align-items-center w-100 --}}
-                    <div id="success_alert" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <i class="ri-error-warning-fill rounded me-2 text-success" style="font-size: 1.5rem;"></i>
-                            <strong class="me-auto text-success">Success Request</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            You have been logged in successfully.
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <script>
-                const success_alert = document.getElementById('success_alert');
-                const toast = new bootstrap.Toast(success_alert);
-                if (!localStorage.getItem('toastShown')) {
-                    toast.show();
-                    // setTimeout(() => toast.hide(), 2500);
-                    localStorage.setItem('toastShown', true); 
-                    
-                }
-                else {
-                    localStorage.setItem('toastShown', false);
-                }
-            </script>
         </div>
     </body>
 </html>
