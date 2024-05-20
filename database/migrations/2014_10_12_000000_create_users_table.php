@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {       /**This codes are the responsible in creating a table and columns in the database    */
         Schema::create('users', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('name');
             $table->softDeletes();
             $table->string('email')->unique();
@@ -21,8 +21,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->string('status')->default('Offline');
-            $table->boolean('isDeactivated')->nullable()->default(false);
+            // $table->string('status')->default('Offline');
+            // $table->boolean('isDeactivated')->nullable()->default(false);
         });
     }
 

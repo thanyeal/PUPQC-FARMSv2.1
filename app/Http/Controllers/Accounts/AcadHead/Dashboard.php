@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class Dashboard extends Controller
 {
     
-    public function _view(){
+    public function _view_acadhead(){
         return view('accounts.acadhead.dashboard');
         // $user_id = Auth::user()->id;
         // $user = User::where('user_id', $user_id)->firstOrFail();

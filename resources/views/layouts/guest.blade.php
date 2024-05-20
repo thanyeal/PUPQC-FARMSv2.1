@@ -18,7 +18,7 @@
 
         <!-- Custom Stylesheets -->
         <link rel="stylesheet" href="{{ asset('css/loginstyle.css') }}">
-        <script src="{{ asset('plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('plugins/bootstrap.bundle.min.js') }}"></script>
 
     </head>
     <body class="font-sans text-gray-900 antialiased d-flex flex-column h-100 ">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-
+        {{-- Toast Alert if User is Not Existing --}}
         <div aria-live="polite" aria-atomic="true" class="fixed bottom-4 right-4 z-50">
             <div class="toast-container position-fixed bottom-0 end-0 p-3"> {{-- d-flex justify-content-center align-items-center w-100 --}}
                 <div id="forgot_alert" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </footer>
-
+        {{-- Script for Toaster --}}
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const forgot_alert = document.getElementById('forgot_alert');
