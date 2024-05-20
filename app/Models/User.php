@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    public $incrementing = false; //This fix the bug with the Auth::user()->id code.
 
     /**
      * The attributes that are mass assignable.

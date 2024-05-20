@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->autoIncrement();
             $table->timestamps();
             $table->softDeletes();
             // $table->foreignUuid('created_at')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
